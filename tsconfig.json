@@ -25,7 +25,6 @@
         "types": ["node", "@emotion/react/types/css-prop"]
     },
     "include": [
-        "src",
-        "index.d.ts"
+        "src"
     ]
 }
