@@ -1,6 +1,6 @@
 # Simple Express + React + Webpack Template (in Typescript!)
 
-This is a simple express.js + react.js (+ Emotion JS) + webpack template.
+This is a simple Express + React (+ Emotion JS for styling) + webpack template.
 
 ## How to...
 
@@ -50,7 +50,7 @@ Check out the `pipeline` folder for the Dockerfiles and what not.
 
 - It uses `docker-compose` to start 2 services, `frontend` and `apiserver`.
 - The `frontend` service is a nginx server that serves the static files in react, and then reverse proxies all other requests to `apiserver`.
-- The `apiserver` service runs node and the api service code in `src/server/app.js`
+- The `apiserver` service runs node and the api service code from `./build/prod/api/app.js`
 
 ## Other Notes
 
