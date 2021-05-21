@@ -65,11 +65,11 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "watch:api": "./node_modules/.bin/ts-node-dev --watch ./src/api/ ./src/api/app.ts",
+    "watch:api": "./node_modules/.bin/ts-node-dev --project ./api/tsconfig.json --watch ./api/src ./api/src/app.ts",
     "watch:frontend": "./node_modules/.bin/webpack serve --env local --config webpack.config.ts",
     "watch": "./node_modules/.bin/concurrently 'yarn:watch:*'",
     "build:frontend": "./node_modules/.bin/webpack --env production --config webpack.config.ts",
-    "build:api": "./node_modules/.bin/tsc --project tsconfig.api.json",
+    "build:api": "./node_modules/.bin/tsc --project ./api/tsconfig.json",
     "build": "./node_modules/.bin/concurrently 'yarn:build:*'",
     "docker:build": "docker-compose --file ./pipeline/docker-compose.yml build",
     "docker:up": "docker-compose --file ./pipeline/docker-compose.yml up"

@@ -6,11 +6,11 @@ import {css} from "@emotion/react";
 
 const styles = css`
     color: black;
-    font-size: 10px;
+    font-size: 24px;
 `;
 
 const App = () => (
-    <h1 css={styles}>Sample App!!<img src={Potatoes}/></h1>
+    <h1 css={styles}>Sample App!!!!<img src={Potatoes}/></h1>
 );
 
 ReactDOM.render(

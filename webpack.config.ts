@@ -14,7 +14,7 @@ export default (env: any): webpack.Configuration => {
     const isProduction: boolean = env.production;
 
     const baseConfig: webpack.Configuration = {
-        entry: "./src/frontend/app.tsx",
+        entry: "./frontend/src/app.tsx",
         module: {
             rules: [{
                 test: /\.(ts|js)x?$/i,
@@ -49,10 +49,13 @@ export default (env: any): webpack.Configuration => {
             new HtmlWebpackPlugin({
                 title: "App",
                 minify: true,
-                template: "src/frontend/index.html",
+                template: "frontend/src/index.html",
             }),
             new ForkTsCheckerWebpackPlugin({
-                async: false
+                async: false,
+                typescript: {
+                    configFile: "./frontend/tsconfig.json"
+                }
             }),
             new ESLintPlugin({
                 extensions: ["js", "jsx", "ts", "tsx"],
@@ -71,10 +74,13 @@ export default (env: any): webpack.Configuration => {
             new HtmlWebpackPlugin({
                 title: "App",
                 minify: false,
-                template: "src/frontend/index.html",
+                template: "frontend/src/index.html",
             }),
             new ForkTsCheckerWebpackPlugin({
-                async: true
+                async: true,
+                typescript: {
+                    configFile: "./frontend/tsconfig.json"
+                }
             }),
             new ESLintPlugin({
                 extensions: ["js", "jsx", "ts", "tsx"],
@@ -89,7 +95,7 @@ export default (env: any): webpack.Configuration => {
             port: 4000,
             hot: true,
             proxy: {
-                "/api": "http://localhost:9000"
+                "/api": "http://localhost:3000"
             }
         },
     }, baseConfig);
