@@ -1,6 +1,6 @@
-# Simple Express + React + Webpack Template
+# Simple Express + React + Webpack Template (in Typescript!)
 
-This is a simple express.js + react.js (+ SASS) + webpack template.
+This is a simple express.js + react.js (+ Emotion JS) + webpack template.
 
 ## How to...
 
@@ -16,15 +16,17 @@ yarn
 yarn watch
 ```
 
-Then visit `http://localhost:3000` to see the homepage. It'll autoreload the server and rebuild assets when you change stuff (you'll still need to refresh the page to see changes though).
+Then visit `http://localhost:3000` to see the homepage. It'll autoreload the server and rebuild assets when you change stuff. It'll automatically refresh the page once you write changes.
 
-### Build frontend files?
+### Build files?
 
 ```
 yarn build
 ```
 
 It'll put frontend assets into `./build/prod/frontend`
+
+The api server will be transpiled from typescript into JS and put in `./build/prod/api`
 
 Ideally, this is then served by a webserver like nginx.
 
